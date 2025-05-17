@@ -2,8 +2,6 @@ import torch
 import sys
 import argparse
 
-pd.options.display.precision = 3
-
 def var_dict(*args):
     callers_local_vars = inspect.currentframe().f_back.f_locals.items()
     return dict([(name, val) for name, val in callers_local_vars if val is arg][0] 
@@ -46,6 +44,7 @@ def main():
     import pandas as pd
     from torch.utils import benchmark
 
+    pd.options.display.precision = 3
     matmul_tflops = defaultdict(lambda: {})
 
     dtypes = [torch.float16]
