@@ -1,12 +1,6 @@
 import torch
 import sys
 import argparse
-import json
-from tabulate import tabulate
-import inspect
-from collections import defaultdict
-import pandas as pd
-from torch.utils import benchmark
 
 pd.options.display.precision = 3
 
@@ -44,6 +38,13 @@ def main():
         if not torch.cuda.is_bf16_supported(args.index):
             print(f"Error: This device does not support the BF16 precision!")
             sys.exit(1)
+            
+    import json
+    from tabulate import tabulate
+    import inspect
+    from collections import defaultdict
+    import pandas as pd
+    from torch.utils import benchmark
 
     matmul_tflops = defaultdict(lambda: {})
 
