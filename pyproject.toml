@@ -1,0 +1,12 @@
+[build-system]
+requires = [
+    "setuptools>=42",
+    "torch>=1.6",
+    "argparse",
+    "tabulate",
+    "pandas"
+]
+build-backend = "setuptools.build_meta"
+
+[project.scripts]
+mbench = "mbench.cli:main"
