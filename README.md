@@ -1,7 +1,7 @@
 ## mbench
 Simple CUDA matmul benchmark CLI tool
 
-## Install
+## Installation
 ```bash
 pip3 install torch --index-url https://download.pytorch.org/whl/cu128
 pip3 install git+https://github.com/lihaoyun6/mbench.git
@@ -10,7 +10,7 @@ pip3 install git+https://github.com/lihaoyun6/mbench.git
 ## Usage
 
 ```bash
-usage: perf_test.py [-h] [-i INDEX] [-d] [-s] [-b] [-j]
+usage: mbench [-h] [-i INDEX] [-d] [-s] [-b] [-j]
 
 CUDA matmul benchmark script
 
