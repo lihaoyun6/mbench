@@ -70,8 +70,7 @@ def main():
         for n, inner in matmul_tflops.items()
     }
 
-    sys.stdout.write('\033[K' + '\n')
-    sys.stdout.flush()
+    print('                                               ')
 
     if args.json:
         print(json.dumps(converted, indent=2))

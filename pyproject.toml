@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "mbench"
-version = "0.1.0"
+version = "0.1.1"
 description = "CUDA matmul benchmark script"
 authors = [
     {name = "lihaoyun6", email = "lihaoyun11@gmail.com"}
