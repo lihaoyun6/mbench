@@ -3,7 +3,7 @@ Simple CUDA matmul benchmark CLI tool
 
 ## Install
 ```bash
-pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
+pip3 install torch --index-url https://download.pytorch.org/whl/cu128
 pip3 install git+https://github.com/lihaoyun6/mbench.git
 ```
 
