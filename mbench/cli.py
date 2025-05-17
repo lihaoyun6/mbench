@@ -1,15 +1,4 @@
-import torch
-import sys
 import argparse
-
-def var_dict(*args):
-    callers_local_vars = inspect.currentframe().f_back.f_locals.items()
-    return dict([(name, val) for name, val in callers_local_vars if val is arg][0] 
-                for arg in args)
-
-def walltime(stmt, arg_dict, duration=3):
-    return benchmark.Timer(stmt=stmt, globals=arg_dict).blocked_autorange(
-        min_run_time=duration).median
 
 def main():
     parser = argparse.ArgumentParser(description="CUDA matmul benchmark script")
@@ -19,7 +8,19 @@ def main():
     parser.add_argument("-b", "--bfloat", action="store_true", help="Run BF16 benchmarks")
     parser.add_argument("-j", "--json", action="store_true", help="Output in json format")
     args = parser.parse_args()
-
+    
+    def var_dict(*args):
+        callers_local_vars = inspect.currentframe().f_back.f_locals.items()
+        return dict([(name, val) for name, val in callers_local_vars if val is arg][0] 
+                    for arg in args)
+    
+    def walltime(stmt, arg_dict, duration=3):
+        return benchmark.Timer(stmt=stmt, globals=arg_dict).blocked_autorange(
+            min_run_time=duration).median
+    
+    import sys
+    import torch
+    
     try:
         if args.index < 0 or args.index >= torch.cuda.device_count():
             raise ValueError(f"Invalid device index: {args.index}")
