@@ -1,12 +1,20 @@
 [build-system]
-requires = [
-    "setuptools>=42",
+requires = ["setuptools>=42"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mbench"
+version = "0.1.0"
+description = "CUDA matmul benchmark script"
+authors = [
+    {name = "lihaoyun6", email = ""}
+]
+dependencies = [
     "torch>=1.6",
     "argparse",
-    "tabulate",
-    "pandas"
+    "pandas",
+    "tabulate"
 ]
-build-backend = "setuptools.build_meta"
 
 [project.scripts]
 mbench = "mbench.cli:main"
