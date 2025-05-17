@@ -7,7 +7,7 @@ name = "mbench"
 version = "0.1.0"
 description = "CUDA matmul benchmark script"
 authors = [
-    {name = "lihaoyun6", email = ""}
+    {name = "lihaoyun6", email = "lihaoyun11@gmail.com"}
 ]
 dependencies = [
     "torch>=1.6",
